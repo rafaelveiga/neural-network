@@ -4,9 +4,9 @@ export default class Renderer {
     this.HEIGHT = 1000;
     this.WIDTH = 1000;
     this.LAYERS = 3;
-    this.NODE_SIZE = 5;
+    this.NODE_SIZE = 7;
 
-    this.canvas = document.getElementById("canvas");
+    this.canvas = document.getElementById("nn-graph");
     this.canvas.height = this.HEIGHT;
     this.canvas.width = this.WIDTH;
     this.ctx = this.canvas.getContext("2d");
@@ -46,14 +46,16 @@ export default class Renderer {
   }
 
   drawResults() {
+    const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+
     this.nn.result.map((result, i) => {
       this.ctx.fillText(
-        `Result ${i + 1}: ${result.toFixed(2)}`,
+        `${alphabet[i]}: ${result.toFixed(2)}`,
         (this.WIDTH / this.LAYERS) * 3 -
           this.WIDTH / this.LAYERS / 2 +
           this.NODE_SIZE +
           10,
-        (this.HEIGHT / (this.nn.outputs + 1)) * (i + 1)
+        (this.HEIGHT / (this.nn.outputs + 1)) * (i + 1) + 2
       );
     });
   }

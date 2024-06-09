@@ -6,12 +6,23 @@
     <title>Document</title>
   </head>
   <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
     canvas {
       border: 1px solid black;
     }
   </style>
   <body>
-    <canvas id="canvas" width="800" height="600"></canvas>
+    <div>
+      <canvas id="canvas" width="160" height="160"></canvas> <br />
+      <button id="export">Export</button>
+      <button id="clear">Clear</button>
+    </div>
+    <canvas id="nn-graph" width="800" height="600"></canvas>
     <script src="dist/main.js"></script>
   </body>
 </html>

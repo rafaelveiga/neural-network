@@ -1,8 +1,9 @@
 export class Trainer {
-  constructor(nn, input, expectedOutput) {
+  constructor(nn) {
     this.nn = nn;
+  }
 
-    this.train(input, expectedOutput);
+  getNeuralNetwork() {
     return this.nn;
   }
 
